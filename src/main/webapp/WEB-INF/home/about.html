@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="home/link :: head(~{::title})">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>关于我</title>
+    <!-- 导入我的css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <!-- 导入我的css -->
+    <link rel="stylesheet" href="../../static/css/me.css">
+    <link rel="stylesheet" href="../../static/TxCSS/1.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
+
+</head>
+<link rel="stylesheet" href="/cn/static/TxCSS/1.css">
+<body >
+<!-- 导航 -->
+<!-- 去掉inverted 就是白色框 加上就是黑色框 -->
+<!-- mini名字在css那边设置他的宽高 -->
+<nav th:replace="home/link :: menu(5)" class="ui  segment mini shadow" style="background:rgba(39,60,125,0.4);">
+    <!-- 居中 -->
+    <div class="ui container">
+        <!-- stackable 兼容手机端-->
+        <div class="ui inverted secondary stackable menu">
+            <img src="./static/images/timg.gif" style="width: 68.47px;height: 68.47px;" alt="">
+            <h2 class="ui teal header item">
+                LQF
+            </h2>
+            <a href="index.html" class="i-item black item mobileHide"><i class=" home icon"></i>首页</a>
+            <a href="types.html" class="i-item item mobileHide"><i class=" align center icon"></i>分类</a>
+            <a href="tags.html" class="i-item item mobileHide"><i class=" tags icon"></i>标签</a>
+            <a href="archives.html" class="i-item item mobileHide"><i class=" clone icon"></i>归档</a>
+            <a href="about.html" class="active i-item item mobileHide"><i class=" info icon"></i>关于我</a>
+            <div class="right i-item item mobileHide">
+                <!-- transparent使输入框透明 -->
+                <!-- 由于透明过后搜索看见了,上面使用了inverted反转,这里再使用一遍 -->
+                <div class="ui icon inverted transparent input">
+                    <input type="text" placeholder="搜索">
+                    <!-- link使输入框鼠标移上去显示手指图标 -->
+                    <i class="search link icon"></i>
+                </div>
+                <div>
+                </div>
+            </div>
+            <div class="right i-item mobileHide menu">
+                <div class="ui dropdown item">
+                    <div class="text">
+                        <img src="./static/images/yes.jpg" style="height: 100px;" alt="" class="ui avatar image">
+                        请登录
+                    </div>
+                    <i class="dropdown icon"></i>
+                    <div class="menu">
+                        <a href="#" class="item" style="text-align:center">登录</a>
+                    </div>
+                    <div class="menu">
+                        <a href="../admin/blogs.html" class="item" style="text-align:center">后台</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="#" id="menu" class="ui blue icon button rightTop mobileShow" style="background:rgba(39,60,125,0.4);">
+        <i class="sidebar icon"></i>
+    </a>
+</nav>
+
+<!-- 中间内容 -->
+<!--<object height="100" width="100" data="../music/jljt.mp3"></object>-->
+<div class="i-container large">
+    <div class="ui container">
+        <div class="ui stackable grid">
+            <div class="eleven wide column">
+                <div class="ui segment">
+
+                    <img src="./static/images/yes.jpg" alt="" class="ui rounded image">
+                </div>
+            </div>
+            <div class="five wide column i-text-color">
+                <div class="ui top attached center aligned segment i-font-big">
+                    关于我
+                </div>
+                <div class="ui attached segment font-family2 i-font-large">
+                    <p>姓名:李强锋!<br>
+                        爱好:XXX！<br>
+                        身份:陈鑫的太爷爷,杨仲钦的爷爷,樊彬的爹,陈龙的干爹,四川新华电脑学院的统治者</p>
+                    <br>
+                    <p>隐藏身份:刘友刚的大爹</p>
+                </div>
+                <div class="ui attached segment">
+                    <div class="ui orange left pointing basic label margin-tiny">编程</div>
+                    <div class="ui orange left pointing basic label margin-tiny">编程</div>
+                    <div class="ui orange left pointing basic label margin-tiny">编程</div>
+                    <div class="ui orange left pointing basic label margin-tiny">编程</div>
+                </div>
+                <div class="ui attached segment">
+                    <div class="ui teal left pointing basic label margin-tiny">Java</div>
+                    <div class="ui teal left pointing basic label margin-tiny">JavaScript</div>
+                    <div class="ui teal left pointing basic label margin-tiny">Html</div>
+                    <div class="ui teal left pointing basic label margin-tiny">Mysql</div>
+                    <div class="ui teal left pointing basic label margin-tiny">微服务</div>
+                    <div class="ui teal left pointing basic label margin-tiny">...</div>
+                </div>
+                <div class="ui bottom attached segment">
+                    <a href="#" class="ui circular icon button" ><i class="github icon"></i></a>
+                    <a href="#" class="ui wechat circular icon button"><i class="weixin icon"></i></a>
+                    <a href="#" class="ui qq circular icon button "><i class="qq icon"></i></a>
+                    <a href="#" class="ui twitter circular icon button "><i class="twitter icon"></i></a>
+                </div>
+
+                <div class="ui wechat-qr flowing popup transition hidden">
+                    <img src="./static/images/yes.jpg" alt="" style="width: 100px;" class="ui rounded image">
+                </div>
+                <div class="ui qq-qr flowing popup transition hidden">
+                    <img src="./static/images/yes.jpg" alt="" style="width: 100px;" class="ui rounded image">
+                </div>
+                <div class="ui twitter-qr flowing popup transition hidden">
+                    <img src="./static/images/yes.jpg" alt="" style="width: 100px;" class="ui rounded image">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 底部 -->
+<footer th:replace="home/link :: footer" class="ui inverted vertical segment large" style="background:rgba(39,60,125,0.4);">
+    <!-- center aligned居中 -->
+    <div class="ui center aligned container">
+        <!-- 分成了16个区域 -->
+        <!-- 3  3   3   7-->
+        <!-- divided 产生虚线 -->
+        <div class="ui inverted divided stackable grid">
+            <div class="three wide column">
+                <div class="ui inverted link list">
+                    <!-- 使图片成为圆角 -->
+                    <div class="item">
+                        <img src="./static/images/xin.jpg" class="ui rounded image" alt="" style="width: 100px">
+                    </div>
+                </div>
+            </div>
+            <div class="three wide column">
+                <h4 class="ui inverted header letterSpacing fontWeight">最新博客</h4>
+                <div class="ui inverted link list">
+                    <a href="#" class="item">没得思路</a>
+                    <a href="#" class="item">没得思路</a>
+                    <a href="#" class="item">没得思路</a>
+                </div>
+            </div>
+            <div class="three wide column">
+                <h4 class="ui inverted header letterSpacing fontWeight">联系方式</h4>
+                <div class="ui inverted link list">
+                    <a href="#" class="item"><i class="qq icon"></i>3137696005</a>
+                    <a href="#" class="item"><i class="phone icon"></i>17683221970</a>
+                    <a href="#" class="item"><i class="weixin icon"></i>qq3137696005</a>
+                    <a href="#" class="item"><i class="envelope icon"></i>3137696005@qq.com</a>
+                </div>
+            </div>
+            <div class="seven wide column">
+                <h4 class="ui inverted header letterSpacing fontWeight">Blog</h4>
+                <p class="letterSpacing fontWeight opacity">个人博客啊!个人博客就是我个人用的博客就叫个人博客!</p>
+            </div>
+        </div>
+        <div class="ui inverted section divider"></div>
+        <p class="letterSpacing fontWeight opacity">博客归属者:LQF</p>
+    </div>
+</footer>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+<!--/*/<th:block th:replace="home/link :: script">/*/-->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/jquery.scrollto@2.1.2/jquery.scrollTo.min.js"></script>
+
+<script src="../../static/libs/prism/prism.js"></script>
+<script src="../../static/libs/tocbot/tocbot.min.js"></script>
+<script src="../../static/libs/qrcode/qrcode.min.js"></script>
+<script src="../../static/libs/waypoints/jquery.waypoints.min.js"></script>
+<!--/*/</th:block>/*/-->
+
+<script>
+    $('#menu').click(function () {
+        $('.i-item ').toggleClass('mobileHide');
+    });
+    $('.ui.dropdown').dropdown({
+        on:'hover'
+    });
+    $('.wechat').popup({
+        popup:$('.wechat-qr'),
+        on:'hover',
+        position:'bottom center'
+    });
+    $('.qq').popup({
+        popup:$('.qq-qr'),
+        on:'hover',
+        position:'bottom center'
+    });
+    $('.twitter').popup({
+        popup:$('.qq-qr'),
+        on:'hover',
+        position:'bottom center'
+    });
+
+</script>
+</body>
+</html>

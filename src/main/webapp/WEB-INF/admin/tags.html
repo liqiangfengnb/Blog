@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="admin/link :: head(~{::title})">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>标签管理</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <!-- 导入我的css -->
+    <link rel="stylesheet" href="../../static/css/me.css">
+    <link rel="stylesheet" href="../../static/TxCSS/1.css">
+
+</head>
+<body>
+<!-- 导航 -->
+<!-- 去掉inverted 就是白色框 加上就是黑色框 -->
+<!-- mini名字在css那边设置他的宽高 -->
+
+<nav th:replace="admin/link :: menu(3)" class="ui  segment mini shadow" style="background:rgba(39,60,125,0.4);">
+    <!-- 居中 -->
+    <div class="ui container">
+        <!-- stackable 兼容手机端-->
+        <div class="ui inverted secondary stackable menu">
+            <img src="../../src/main/resources/static/images/timg.gif" style="width: 68.47px;height: 68.47px;" alt="">
+            <h2 class="ui teal header item">
+                后台管理
+            </h2>
+            <a href="blogs.html" class="active i-item black item mobileHide"><i class=" home icon"></i>博客</a>
+            <a href="../index/types.html" class="i-item item mobileHide"><i class=" align center icon"></i>分类</a>
+            <a href="../index/-tags.html" class="i-item item mobileHide"><i class=" tags icon"></i>标签</a>
+            <div class="right i-item mobileHide menu">
+                <div class="ui dropdown item">
+                    <div class="text">
+                        <img src="../../static/images/yes.jpg" style="height: 100px;" alt="" class="ui avatar image">
+                        陈鑫
+                    </div>
+<!--                    <i class="dropdown icon"></i>-->
+                    <div class="menu">
+                        <a href="#" class="item" style="text-align:center">注销</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="#" id="menu" class="ui blue icon button rightTop mobileShow" style="background:rgba(39,60,125,0.4);">
+        <i class="sidebar icon"></i>
+    </a>
+</nav>
+
+<div class="ui attached pointing menu" style="background:rgba(39,60,125,0);border:1px solid transparent">
+    <div class="ui tb-small container">
+        <div class="right menu">
+            <a href="#" th:href="@{/admin/tags/addPage}" class="item">新增</a>
+            <a href="#" th:href="@{/admin/tags}" class="teal active item">列表</a>
+        </div>
+    </div>
+</div>
+<!-- 中间内容 -->
+<!--<object height="100" width="100" data="../music/jljt.mp3"></object>-->
+
+<div class="i-container-small large">
+    <div class="ui container">
+        <div class="ui success message" th:unless="${#strings.isEmpty(message)}">
+            <i class="close icon"></i>
+            <div class="header">提示:</div>
+            <p th:text="${message}">添加成功</p>
+        </div>
+        <table class="ui celled table">
+            <thead>
+            <tr>
+                <th>编号</th>
+                <th>名称</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr th:each="type,iterStat : ${page.content}">
+                <td th:text="${iterStat.count}">1</td>
+                <td th:text="${type.name}">犬科</td>
+                <td>
+                    <a href="#" th:href="@{/admin/tags/{id}/input(id=${type.id})}" class="ui  small blue basic button">编辑</a>
+                    <a href="#" th:href="@{/admin/tags/{id}/delete(id=${type.id})}" class="ui small  red basic button">删除</a>
+                </td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+                <th colspan="6" >
+                    <div class="ui small pagination menu" th:if="${page.totalPages}>1">
+                        <!-- unless 如果不 -->
+                        <a href="#" th:href="@{/admin/tags(page=${page.number}-1)}" class="item small" th:unless="${page.first}">上一页</a>
+                        <a href="#" th:href="@{/admin/tags(page=${page.number}+1)}" class="item small" th:unless="${page.last}">下一页</a>
+                    </div>
+                    <a href="#" th:href="@{/admin/tags/addPage}" class="ui small right floated teal basic button">新增</a>
+                </th>
+            </tr>
+            </tfoot>
+        </table>
+    </div>
+
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<!-- 底部 -->
+<footer th:replace="admin/link :: footer" class="ui inverted vertical segment large" style="background:rgba(39,60,125,0.4);">
+    <!-- center aligned居中 -->
+    <div class="ui center aligned container">
+        <!-- 分成了16个区域 -->
+        <!-- 3  3   3   7-->
+        <!-- divided 产生虚线 -->
+        <div class="ui inverted divided stackable grid">
+            <div class="three wide column">
+                <div class="ui inverted link list">
+                    <!-- 使图片成为圆角 -->
+                    <div class="item">
+                        <img src="../../src/main/resources/static/images/xin.jpg" class="ui rounded image" alt="" style="width: 100px">
+                    </div>
+                </div>
+            </div>
+            <div class="three wide column">
+                <h4 class="ui inverted header letterSpacing fontWeight">最新博客</h4>
+                <div class="ui inverted link list">
+                    <a href="#" class="item">没得思路</a>
+                    <a href="#" class="item">没得思路</a>
+                    <a href="#" class="item">没得思路</a>
+                </div>
+            </div>
+            <div class="three wide column">
+                <h4 class="ui inverted header letterSpacing fontWeight">联系方式</h4>
+                <div class="ui inverted link list">
+                    <a href="#" class="item"><i class="qq icon"></i>3137696005</a>
+                    <a href="#" class="item"><i class="phone icon"></i>17683221970</a>
+                    <a href="#" class="item"><i class="weixin icon"></i>qq3137696005</a>
+                    <a href="#" class="item"><i class="envelope icon"></i>3137696005@qq.com</a>
+                </div>
+            </div>
+            <div class="seven wide column">
+                <h4 class="ui inverted header letterSpacing fontWeight">Blog</h4>
+                <p class="letterSpacing fontWeight opacity">个人博客啊!个人博客就是我个人用的博客就叫个人博客!</p>
+            </div>
+        </div>
+        <div class="ui inverted section divider"></div>
+        <p class="letterSpacing fontWeight opacity">博客归属者:LQF</p>
+    </div>
+</footer>
+<th:block th:replace="admin/link :: script">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/jquery.scrollto@2.1.2/jquery.scrollTo.min.js"></script>
+</th:block>
+
+<script>
+    $('#menu').click(function () {
+        $('.i-item ').toggleClass('mobileHide');
+    })
+
+    $('.ui.dropdown').dropdown({
+        on: 'hover'
+    });
+    //消息提示关闭初始化
+    $('.message .close')
+        .on('click', function () {
+            $(this)
+                .closest('.message')
+                .transition('fade');
+        });
+</script>
+</body>
+</html>

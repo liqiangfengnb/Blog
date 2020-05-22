@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/blog?useSSL=false&serverTimezone=UTC
+    username: root
+    password: 3137696005
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    file:
+      path: logog-dev.log
+  thymeleaf:
+    prefix: /WEB-INF/
+    suffix: .html
+    mode: html
+    cache: false
+server:
+  port: 8084
+  servlet:
+    context-path: /cn
+
+comment.avatar: /static/images/xin.jpg
+

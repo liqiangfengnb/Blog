@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="admin/link :: head(~{::title})">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>登录</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link rel="stylesheet" href="../../static/TxCSS/1.css">
+    <link rel="stylesheet" href="../../static/libs/editormd/css/editormd.min.css">
+    <link rel="stylesheet" href="../../static/css/me.css">
+    <!-- 内容排版的css -->
+    <link rel="stylesheet" href="../../static/css/typo.css">
+    <link rel="stylesheet" href="../../static/TxCSS/1.css">
+</head>
+<body>
+    <div th:replace="home/link :: login" class="i-container-smallest massive">
+        <div class="ur container">
+            <div class="ui middle aligned center aligned grid">
+                <div class="column">
+                    <h2 class="ui blue image header">
+                        <div class="content">
+                            用户登录
+                        </div>
+                    </h2>
+                    <form class="ui large form" method="post" action="#" th:action="@{home/login}">
+                        <div class="ui stacked segment">
+                            <div class="field">
+                                <div class="ui left icon input">
+                                    <i class="user icon"></i>
+                                    <input type="text" value="cx" name="username" placeholder="请输入你的用户名">
+                                </div>
+                            </div>
+                            <div class="field">
+                                <div class="ui left icon input">
+                                    <i class="lock icon"></i>
+                                    <input type="password" value="2020016563" name="password" placeholder="请输入你的密码">
+                                </div>
+                            </div>
+                            <button class="ui fluid tb blue submit  button">登录</button>
+                        </div>
+                        <div class="ui error message"></div>
+                        <div class="ui small negative message" th:unless="${#strings.isEmpty(message)}" th:text="${message}">用户名和密码错误</div>
+                    </form>
+
+                    <div class="ui message">
+                        还没有注册? <a href="#">点击这里</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $('.ui.form').form({
+            fields : {
+                username : {
+                    identifier: 'username',
+                    rules: [{
+                        type : 'empty',
+                        prompt: '请输入用户名'
+                    }]
+                },
+                password : {
+                    identifier: 'password',
+                    rules: [{
+                        type : 'empty',
+                        prompt: '请输入密码'
+                    }]
+                }
+            }
+        });
+    </script>
+<th:block th:replace="home/link :: script">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+</th:block>
+
+
+</body>
+</html>

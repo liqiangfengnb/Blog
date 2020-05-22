@@ -1,0 +1,206 @@
+/*body{
+    background:url("../images/xx.jpg");
+}*/
+/**
+小高度
+ */
+/*内部间距*/
+.mini{
+    /*1em = 14px*/
+    padding-top: 0.2em !important;
+    padding-bottom: 0.2em !important;
+}
+.mini-top{
+    padding-top: 0.2em !important;
+}
+.i-padded{
+    padding:1em!important;
+}
+.tiny{
+    padding-top: 0.3em !important;
+    padding-bottom: 0.3em !important;
+}
+.tiny-top{
+    padding-top: 0.5em !important;
+}
+.againSmall{
+    padding-top: 0.4em !important;
+    padding-bottom: 0.4em !important;
+}
+.small{
+    padding-top: 0.5em !important;
+    padding-bottom: 0.5em !important;
+}
+.tb-small{
+    padding-top: 0.8em !important;
+    padding-bottom: 0.8em !important;
+}
+.tb{
+    padding-top: 1em !important;
+    padding-bottom: 1em !important;
+}
+/*
+小一点
+ */
+.large{
+    padding-top: 2em !important;
+    padding-bottom: 2em !important;
+}
+.big{
+    padding-top: 3em !important;
+    padding-bottom: 3em !important;
+}
+.huge{
+    padding-top: 4em !important;
+    padding-bottom: 4em !important;
+}
+/*
+大高度
+ */
+.massive{
+    padding-top: 5em !important;
+    padding-bottom: 5em !important;
+}
+.i-padded-lr-responsive{
+    padding-left: 4em !important;
+    padding-right: 4em !important;
+}
+/*-----margin-------*/
+/*外部边距*/
+.margin-tiny{
+    margin-top: 0.3em !important;
+    margin-bottom: 0.3em !important;
+}
+.margin-tiny-top{
+    margin-top: 3em !important;
+}
+.margin-bottom-small{
+    margin-bottom:0.5em!important;
+}
+/*-------text-------*/
+.i-text{
+    font-weight: 300 !important;
+    letter-spacing: 1px !important;
+    line-height: 1.8;
+}
+.font-family{
+    font-family: 'Source Code Pro', monospace;
+}
+.font-family2{
+    font-family: 'Indie Flower', cursive;
+}
+.i-font-big{
+    font-weight: 300 !important;
+    letter-spacing: 1px !important;
+    line-height: 1.8;
+    font-size: 1.5em!important;
+}
+.i-font-large{
+    font-size: 1.3em!important;
+}
+.i-font{
+    font-size: 1.1em!important;
+}
+.i-font-large{
+    font-size: 0.8px;
+}
+.i-font-small{
+    font-size: 0.7em!important;
+}
+.i-font-small-small{
+    font-size: 0.4em!important;
+}
+.i-text-color{
+    color: black;
+}
+/**
+字体粗细
+ */
+.fontWeight{
+    font-weight: 300 !important;
+}
+.fontWeight2{
+    font-weight: 700 !important;
+}
+/*
+字体间隔
+ */
+.letterSpacing{
+    letter-spacing: 1px !important;
+}
+.lineHeight{
+    line-height: 1.8;
+}
+/*
+透明度
+ */
+.opacity{
+    opacity: 0.7!important;
+}
+
+/*------display------*/
+.display{
+    display: inline-block !important;
+}
+/*-----container-----*/
+.i-container{
+    max-width: 72em !important;
+    margin: auto !important;
+}
+.i-container-small{
+    max-width: 60em !important;
+    margin: auto !important;
+}
+.i-container-smallest{
+    max-width: 40em !important;
+    margin: auto !important;
+}
+/*------position-------*/
+.rightTop{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.mobileShow{
+    display: none !important;
+}
+/*------shadow阴影 ------*/
+.shadow{
+    -webkit-box-shadow: 0 4px 8px rgba(0,0,0,0.2) !important;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2) !important;
+}
+/*------当屏幕小于768px的时候就隐藏掉菜单栏----*/
+.imga{
+    display: block;
+}
+/*------position-------*/
+.i-fixed{
+    position: fixed !important;
+}
+
+.i-right-bottom{
+    bottom: 0 !important;
+    right: 0 !important;
+}
+@media screen and (max-width: 768px){
+    .mobileHide {
+        display: none !important;
+    }
+    .mobileShow{
+        display: block !important;
+    }
+    .i-padded-lr-responsive{
+        padding-left: 0!important;
+        padding-right: 0!important;
+    }
+    .imga{
+        display:none !important;
+    }
+    .i-large{
+        padding-left: 0!important;
+        padding-right: 0!important;
+    }
+    .mobile-wide{
+        width: 100% !important;
+    }
+}
